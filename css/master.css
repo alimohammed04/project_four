@@ -801,6 +801,86 @@ ul {
 }
 
 /* end widgets control  */
+/* start backup widget  */
+.backup-manager .Time label {
+  padding-left: 25px;
+  cursor: pointer;
+}
+
+.backup-manager .Time label::before,
+.backup-manager .Time label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+.backup-manager .Time label::before {
+  transform: translateY(-50%);
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--grey-color);
+}
+
+.backup-manager .Time label::after {
+  transform: translateY(-50%) scale(0);
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  background-color: var(--blue-color);
+}
+
+.backup-manager .Time input[type="radio"]:checked+label::before {
+  border-color: var(--blue-color);
+}
+
+.backup-manager .Time input[type="radio"]:checked+label::after {
+  transform: translateY(-50%) scale(1);
+}
+
+.backup-manager .Time input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.locations .box {
+  width: calc(100% / 3);
+}
+
+@media (max-width:425px) {
+  .locations .box {
+    width: 100%;
+  }
+  .locations{
+    flex-wrap: wrap;
+  }
+}
+
+.locations label {
+  padding: 15px;
+  border: 3px solid #eee;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.locations input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.locations input[type="radio"]:checked+label {
+  border-color: var(--blue-color);
+  color: var(--blue-color);
+}
+
+/* end backup widget  */
 /* end setting website  */
 /* start animation */
 @keyframes change-name {
