@@ -12,54 +12,49 @@
         <label for="toggle">
             <div class="toggle-btn"></div>
         </label> */
-.toggle-check,
-.auth-check {
+.toggle-checkbox {
   -webkit-appearance: none;
   appearance: none;
   display: none;
 }
 
-.toggle-btn,
-.auth-check-btn {
-  width: 60px;
-  height: 25px;
+.toggle-switch {
   background-color: #ccc;
+  width: 78px;
+  height: 32px;
   border-radius: 16px;
   position: relative;
-  cursor: pointer;
   transition: 0.3s;
+  cursor: pointer;
 }
 
-.toggle-btn::before,
-.auth-check-btn::before {
-  content: "\f00d";
-  font-size: 12px;
+
+.toggle-switch::before {
   font-family: var(--fa-style-family-classic);
-  font-weight: bold;
-  width: 15px;
-  height: 15px;
+  content: "\f00d";
+  font-weight: 900;
   background-color: white;
-  border-radius: 50%;
+  width: 24px;
+  height: 24px;
   position: absolute;
-  top: 5px;
-  left: 5px;
+  border-radius: 50%;
+  top: 4px;
+  left: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ccc;
+  color: #aaa;
   transition: 0.3s;
 }
 
-.toggle-check:checked+label .toggle-btn::before,
-.auth-check:checked+label .auth-check-btn::before {
-  left: 40px;
-  content: "\f00c";
-  color: var(--blue-color);
+.toggle-checkbox:checked+.toggle-switch {
+  background-color: var(--blue-color);
 }
 
-.toggle-check:checked+label .toggle-btn,
-.auth-check:checked+label .auth-check-btn {
-  background-color: var(--blue-color);
+.toggle-checkbox:checked+.toggle-switch::before {
+  content: "\f00c";
+  left: 50px;
+  color: var(--blue-color);
 }
 
 /* end componants */
@@ -854,7 +849,8 @@ ul {
   .locations .box {
     width: 100%;
   }
-  .locations{
+
+  .locations {
     flex-wrap: wrap;
   }
 }
@@ -882,6 +878,172 @@ ul {
 
 /* end backup widget  */
 /* end setting website  */
+/* start profile  */
+/* start profile main  */
+.profile-main {
+  margin: 0 15px;
+}
+
+.profile-main .profile-head {
+  padding: 20px 40px;
+}
+
+.profile-main .profile-head img {
+  width: 95px;
+}
+
+.profile-main .profile-head .progress {
+  height: 5px;
+  width: 150px;
+}
+
+.profile-main .profile-head .progress>span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+.profile-main .profile-content {
+  flex: 1;
+}
+
+.profile-main .profile-content .content-row {
+  flex-wrap: wrap;
+  transition: 0.3s;
+}
+
+.profile-main .profile-content .content-row:hover {
+  background-color: #f9f9f9;
+}
+
+.prof-btn {
+  width: 85px;
+  height: 20px;
+}
+
+.prof-btn::before {
+  width: 15px;
+  height: 15px;
+  font-size: 13px;
+  top: 2.5px;
+}
+
+.toggle-checkbox:checked+.prof-btn::before {
+  left: 65px;
+}
+
+.profile-main .profile-content .content-row>div:last-child {
+  width: fit-content;
+}
+
+@media (max-width:767px) {
+  .profile-main .profile-content .content-row>div:last-child {
+    margin: auto;
+  }
+
+}
+
+@media (min-width:679px) {
+  .profile-main .profile-content .content-row {
+    border-left: 1px solid #ccc;
+  }
+}
+
+.profile-main .profile-content .content-row>div {
+  padding: 5px 0;
+}
+
+@media (max-width:768px) {
+  .profile-main .profile-content .content-row>div {
+    width: 100%;
+  }
+}
+
+@media (min-width:769px) and (max-width:1024px) {
+  .profile-main .profile-content .content-row>div {
+    width: 126px;
+  }
+}
+
+@media (min-width:1025px) {
+  .profile-main .profile-content .content-row>div {
+    width: 131px;
+  }
+}
+
+@media (min-width:1440px) {
+  .profile-main .profile-content .content-row>div {
+    width: 227px;
+  }
+}
+
+@media (min-width:2560px) {
+  .profile-main .profile-content .content-row>div {
+    width: 400px;
+  }
+}
+
+.profile-main .profile-content .content-row>div .toggle-btn {
+  width: 75px;
+  height: 20px;
+}
+
+.profile-main .profile-content .content-row>div .toggle-check:checked+label .toggle-btn::before {
+  left: 55px;
+}
+
+.profile-main .profile-content .content-row>div .toggle-btn::before {
+  top: 2.5px;
+}
+
+/* end profile main  */
+/* start skills widget */
+@media (min-width:769px) {
+  .content .container .skills {
+    flex-basis: 40%;
+  }
+}
+
+.content .container .skills .row {
+  transition: 0.3s;
+}
+
+.content .container .skills .row:hover {
+  background-color: #f9f9f9;
+}
+
+/* end skills widget */
+/* start latest activities */
+.latest-activities .active-row .content img {
+  width: 50px;
+  height: 50px;
+}
+
+@media (max-width:767px) {
+  .latest-activities .active-row {
+    flex-direction: column;
+  }
+
+  .latest-activities .active-row .content {
+    flex-direction: column;
+  }
+
+  .latest-activities .active-row .content img {
+    margin-bottom: 10px;
+  }
+
+  .latest-activities .active-row .time {
+    margin-top: 15px;
+  }
+
+  .latest-activities .active-row .time>span {
+    text-align: center;
+  }
+}
+
+/* end latest activities */
+/* end profile  */
 /* start animation */
 @keyframes change-name {
   from {
